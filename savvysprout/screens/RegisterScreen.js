@@ -8,6 +8,34 @@ const RegisterScreen = ({navigation}) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
+
+  const handleRegistration = async () => {
+    try {
+      const response = await fetch('http://your-backend-ip:your-port/createNewAccount', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          accName: username,
+          accEmail: email,
+          accPassword: password,
+        }),
+      });
+
+      if (response.ok) {
+        // Registration successful, navigate to another screen
+        navigation.navigate('Login');
+      } else {
+        // Handle registration error
+        const errorData = await response.json();
+        console.error(errorData.message);
+      }
+    } catch (error) {
+      console.error('Error registering:', error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -47,7 +75,7 @@ const RegisterScreen = ({navigation}) => {
         /> 
       </View> 
 
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity style={styles.loginBtn} onPress={handleRegistration}>
         <Text style={styles.loginText}>Register</Text> 
       </TouchableOpacity> 
 
