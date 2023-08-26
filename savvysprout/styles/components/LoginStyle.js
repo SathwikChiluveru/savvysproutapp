@@ -44,12 +44,12 @@ const styles = StyleSheet.create({
       backgroundColor: "#FF1493",
     },
     loginBtn: {
-      width: "75%",
+      width: "80%",
       borderRadius: 25,
       height: 50,
       alignItems: "center",
       justifyContent: "center",
-      marginTop: 40,
+      marginTop: 20,
       backgroundColor: "#FF1493",
     },
   });
