@@ -2,6 +2,9 @@ const Account = require('../model/account.model');
 const Profile = require('../model/profile.model'); // Import the Profile model
 const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcrypt');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const secretKey = 'test';
 
 // @desc Get all accounts
 // @route GET /getAllAccounts
@@ -53,30 +56,22 @@ const createNewAccount = asyncHandler(async (req, res) => {
 
 // Log in user and create a session
 const loginAccount = asyncHandler(async (req, res) => {
-    const { accName, accPassword } = req.body;
-
     try {
-        // Find the account by username
-        const account = await Account.findOne({ accName }).exec();
-
+        const { username, password } = req.body;
+        const account = await Account.findOne({ username }).exec();
         if (!account) {
             return res.status(404).json({ message: 'Account not found' });
         }
-
-        // Check password
-        const passwordMatch = await bcrypt.compare(accPassword, account.accPassword);
-
+        const passwordMatch = await bcrypt.compare(password, account.password);
         if (passwordMatch) {
-            // Create a session for the user
-            req.session.userId = account._id;
-
-            return res.status(200).json({ message: 'Login successful' });
+            const token = jwt.sign({ userId: account._id }, secretKey, { expiresIn: '1h' });
+            res.status(200).json({ token });
         } else {
-            return res.status(401).json({ message: 'Invalid credentials' });
+            res.status(401).json({ message: 'Invalid credentials' });
         }
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ message: 'Error during login' });
+        res.status(500).json({ message: 'Error during login' });
     }
 });
 
