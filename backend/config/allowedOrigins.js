@@ -1,5 +1,4 @@
 const allowedOrigins = [
-    'http://localhost:3000'
+    'http://192.168.1.27:8081'
 ]
-
 module.exports = allowedOrigins

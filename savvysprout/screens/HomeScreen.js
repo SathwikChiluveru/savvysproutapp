@@ -37,9 +37,9 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
     onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
     onPanResponderMove: (evt, gestureState) => {
       xPosition.setValue(gestureState.dx);
-      if (gestureState.dx > SCREEN_WIDTH - 250) {
+      if (gestureState.dx > SCREEN_WIDTH - 150) {
         swipeDirection = 'Right';
-      } else if (gestureState.dx < -SCREEN_WIDTH + 250) {
+      } else if (gestureState.dx < -SCREEN_WIDTH + 150) {
         swipeDirection = 'Left';
       }
     },

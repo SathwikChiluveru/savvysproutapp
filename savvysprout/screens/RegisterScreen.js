@@ -13,26 +13,52 @@ const RegisterScreen = ({navigation}) => {
   const registrationRoute = "api/account/createNewAccount";
   const apiUrl = `${backendUrl}${registrationRoute}`;
 
+  // const handleRegistration = async () => {
+  //   try {
+  //     const response = await axios.post(
+  //       apiUrl,
+  //       {
+  //         accName: username,
+  //         accEmail: email,
+  //         accPassword: password,
+  //       }
+  //     );
+
+  //     if (response.status === 201) {
+  //       // Registration successful, navigate to another screen
+  //       navigation.navigate("Login");
+  //     } else {
+  //       // Handle registration error
+  //       console.error(response.data.message);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error registering:", error);
+  //   }
+  // };
   const handleRegistration = async () => {
     try {
-      const response = await axios.post(
-        apiUrl,
-        {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           accName: username,
           accEmail: email,
           accPassword: password,
-        }
-      );
-
-      if (response.status === 201) {
+        }),
+      });
+      
+      if (response.ok) {
         // Registration successful, navigate to another screen
-        navigation.navigate("Login");
+        navigation.navigate('Login');
       } else {
         // Handle registration error
-        console.error(response.data.message);
+        const errorData = await response.json();
+        console.error(errorData.message);
       }
     } catch (error) {
-      console.error("Error registering:", error);
+      console.error('Error registering:', error);
     }
   };
 
@@ -53,7 +79,7 @@ const RegisterScreen = ({navigation}) => {
           placeholder="Email"
           placeholderTextColor="#003f5c"
           secureTextEntry={true}
-          onChangeText={(email) => setPassword(email)}
+          onChangeText={(email) => setEmail(email)}
         /> 
       </View> 
       <View style={styles.inputView}>
@@ -83,8 +109,6 @@ const RegisterScreen = ({navigation}) => {
         <Text style={styles.forgot_button}>Login instead</Text> 
       </TouchableOpacity> 
     </View> 
-
-    
   );
 }
 
