@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {Text,View,Image,TextInput,Button,TouchableOpacity,} from "react-native";
+import {Text,View,Image,TextInput,Button,TouchableOpacity, KeyboardAvoidingView,} from "react-native";
 import styles from '../styles/components/LoginStyle';
 
 
@@ -17,7 +17,7 @@ const LoginScreen = ({navigation}) => {
           placeholder="Email or Username"
           placeholderTextColor="#003f5c"
           onChangeText={(username) => setUsername(username)}
-        /> 
+        />
       </View> 
       <View style={styles.inputView}>
         <TextInput
@@ -36,7 +36,7 @@ const LoginScreen = ({navigation}) => {
       </TouchableOpacity>
       <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.loginText}>LOGIN</Text> 
-      </TouchableOpacity> 
+      </TouchableOpacity>
     </View> 
   );
 }
