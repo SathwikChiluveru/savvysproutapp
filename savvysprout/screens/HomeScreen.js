@@ -109,10 +109,6 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
 
 const Tab = createBottomTabNavigator();
 
-
-
-
-
 function SwipePage() {
   const [noMoreCard, setNoMoreCard] = useState(false);
   const [sampleCardArray, setSampleCardArray] = useState(DEMO_CONTENT);
