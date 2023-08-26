@@ -26,8 +26,17 @@ const styles = StyleSheet.create({
       padding: 10,
     },
     forgot_button: {
-      height: 30,
+      height: 20,
       marginBottom: 30,
+    },
+    signupBtn: {
+      width: "80%",
+      borderRadius: 25,
+      height: 50,
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: 10,
+      backgroundColor: "#FF1493",
     },
     loginBtn: {
       width: "80%",
@@ -35,7 +44,7 @@ const styles = StyleSheet.create({
       height: 50,
       alignItems: "center",
       justifyContent: "center",
-      marginTop: 40,
+      marginTop: 10,
       backgroundColor: "#FF1493",
     },
   });
