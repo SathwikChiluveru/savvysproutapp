@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image, Animated } from 'react-native';
+const SCREEN_HEIGHT = Dimensions.get('window').height
+const SCREEN_WIDTH = Dimensions.get('window').width
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
-const Foods = [
+const Users = [
     { id: "1", uri: require('../assets/1.jpg') },
     { id: "2", uri: require('../assets/2.jpg') },
     { id: "3", uri: require('../assets/3.jpg') },
@@ -15,8 +17,31 @@ const Foods = [
 
 function SwipePage() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Swipe!</Text>
+<View style={{ flex: 1 }}>
+        <View style={{ height: 60 }} />
+        <View style={{ flex: 1 }}>
+          <Animated.View
+            style={[
+              {
+                height: SCREEN_HEIGHT - 300,
+                width: SCREEN_WIDTH,
+                padding: 10
+              }
+            ]}
+          >
+            <Image
+              style={{
+                flex: 1,
+                height: null,
+                width: null,
+                resizeMode: "cover",
+                borderRadius: 20
+              }}
+              source={Users[0].uri}
+            />
+          </Animated.View>
+        </View>
+        <View style={{ height: 60 }} />
       </View>
     );
   }
