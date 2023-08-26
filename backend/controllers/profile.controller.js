@@ -12,6 +12,8 @@ const getAllProfiles = asyncHandler(async (req, res) => {
         })
 })
 
+
+
 const updateProfile = asyncHandler(async (req, res) => {
     const { _id, bio, gender, userName } = req.body;
 
