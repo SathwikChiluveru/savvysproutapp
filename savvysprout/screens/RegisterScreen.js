@@ -15,7 +15,7 @@ const RegisterScreen = ({navigation}) => {
 
   const handleRegistration = async () => {
     try {
-      const response = await fetch('http://localhost:3500/api/account/createNewAccount', {
+      const response = await fetch('http://localhost:3500/api/account/createNewAccount'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
