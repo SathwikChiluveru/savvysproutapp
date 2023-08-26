@@ -9,8 +9,8 @@ const RegisterScreen = ({navigation}) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
-  const backendUrl = "http://your-backend-ip:your-port";
-  const registrationRoute = "/createNewAccount";
+  const backendUrl = "http://localhost:3500";
+  const registrationRoute = "api/account/createNewAccount";
   const apiUrl = `${backendUrl}${registrationRoute}`;
 
   const handleRegistration = async () => {
