@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
       height: 50,
       flex: 1,
       padding: 10,
-      marginLeft: 20,
     },
     forgot_button: {
       height: 30,
