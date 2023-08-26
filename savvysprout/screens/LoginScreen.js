@@ -14,7 +14,7 @@ const LoginScreen = ({navigation}) => {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Email."
+          placeholder="Email or Username"
           placeholderTextColor="#003f5c"
           onChangeText={(username) => setUsername(username)}
         /> 
@@ -22,7 +22,7 @@ const LoginScreen = ({navigation}) => {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Password."
+          placeholder="Password"
           placeholderTextColor="#003f5c"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
@@ -31,6 +31,9 @@ const LoginScreen = ({navigation}) => {
       <TouchableOpacity>
         <Text style={styles.forgot_button}>Forgot Password?</Text> 
       </TouchableOpacity> 
+      <TouchableOpacity style={styles.signupBtn} onPress={() => navigation.navigate('Register')}>
+        <Text style={styles.signupText}>Sign Up</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.loginText}>LOGIN</Text> 
       </TouchableOpacity> 
