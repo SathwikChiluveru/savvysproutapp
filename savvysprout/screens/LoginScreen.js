@@ -34,13 +34,12 @@ const LoginScreen = ({ navigation }) => {
       </View>
 
       <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
-
+        <Text style={styles.forgot_button}>Forgot Password?</Text> 
+      </TouchableOpacity> 
       <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Register')}>
-        <Text style={styles.loginText}>LOGIN</Text>
-      </TouchableOpacity>
-    </View>
+        <Text style={styles.loginText}>LOGIN</Text> 
+      </TouchableOpacity> 
+    </View> 
   );
 };
 
