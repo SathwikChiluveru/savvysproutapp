@@ -6,12 +6,10 @@ const accountSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-
         accEmail: {
-            type: String, 
+            type: String,
             required: true
         },
-
         accPassword: {
             type: String,
             required: true
