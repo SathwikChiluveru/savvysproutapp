@@ -15,10 +15,7 @@ app.use(express.json())
 app.use('/', express.static(path.join(__dirname, '/public')))
 
 // Routes
-app.use('/api/account', require('./routes/account.routes'))
-app.use('/api/outfit', require('./routes/outfit.routes'))
-app.use('/api/post', require('./routes/post.routes'))
-app.use('/api/userinfo', require('./routes/userInfo.routes'))
+
 
 // app.all('*', (req, res) => {
 //     res.status(404)
