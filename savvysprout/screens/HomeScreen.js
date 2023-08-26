@@ -1,10 +1,13 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Dimensions, Image, Animated } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image, Animated, Button } from 'react-native';
 import styles from '../styles/components/HomeStyle';
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ChatPage } from './ChatPage';
+import { CommunityPage } from './CommunityPage';
+import { UserPage } from './UserPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -58,48 +61,17 @@ function SwipePage() {
       </View>
     );
   }
-  
-  function ChatPage() {
-    return (
-      <View style={styles.container}>
-        <Text>Chat!</Text>
-      </View>
-    );
-  }
-
-  function CommunitiesPage() {
-    return (
-      <View style={styles.container}>
-        <Text>Communities!</Text>
-      </View>
-    );
-  }
-
-  function UserPage() {
-    return (
-      <View style={styles.container}>
-        <Text>User!</Text>
-      </View>
-    );
-  }
-
-
-
-
 
   function MyTabs() {
     return (
       <Tab.Navigator>
         <Tab.Screen name="Swipe" component={SwipePage} />
         <Tab.Screen name="Chat" component={ChatPage} />
-        <Tab.Screen name="Communities" component={CommunitiesPage} />
+        <Tab.Screen name="Communities" component={CommunityPage} />
         <Tab.Screen name="User" component={UserPage} />
       </Tab.Navigator>
     );
   }
-
-
-
 
 function HomeScreen() {
   return (

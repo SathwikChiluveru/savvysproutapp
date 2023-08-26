@@ -6,12 +6,10 @@ import {LoginScreen} from './screens/LoginScreen';
 import {RegisterScreen} from './screens/RegisterScreen'
 import {HomeScreen} from './screens/HomeScreen'
 
-
-
 const Stack = createNativeStackNavigator();
 
 function DetailsScreen({navigation}) {
-  return (
+  return (    
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
       <Button
@@ -30,7 +28,6 @@ function App() {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
