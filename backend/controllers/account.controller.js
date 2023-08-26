@@ -51,7 +51,37 @@ const createNewAccount = asyncHandler(async (req, res) => {
     }
 });
 
+// Log in user and create a session
+const loginAccount = asyncHandler(async (req, res) => {
+    const { accName, accPassword } = req.body;
+
+    try {
+        // Find the account by username
+        const account = await Account.findOne({ accName }).exec();
+
+        if (!account) {
+            return res.status(404).json({ message: 'Account not found' });
+        }
+
+        // Check password
+        const passwordMatch = await bcrypt.compare(accPassword, account.accPassword);
+
+        if (passwordMatch) {
+            // Create a session for the user
+            req.session.userId = account._id;
+
+            return res.status(200).json({ message: 'Login successful' });
+        } else {
+            return res.status(401).json({ message: 'Invalid credentials' });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Error during login' });
+    }
+});
+
 module.exports = {
     createNewAccount,
-    getAllAccounts
+    getAllAccounts,
+    loginAccount 
 };
