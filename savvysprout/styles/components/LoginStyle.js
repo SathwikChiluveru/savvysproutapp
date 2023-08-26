@@ -8,9 +8,9 @@ const styles = StyleSheet.create({
       justifyContent: "center",
     },
     image: {
-      paddingBottom: 50,
-      width: 150,
-      height:200,
+      marginBottom: 100,
+      width: 200,
+      height:250,
     },
     inputView: {
       backgroundColor: "#FFC0CB",
