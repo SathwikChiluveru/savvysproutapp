@@ -2,12 +2,16 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {Text,View,Image,TextInput,Button,TouchableOpacity} from "react-native";
 import styles from '../styles/components/RegisterStyle';
+import axios from "axios";
 
 const RegisterScreen = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [username, setUsername] = useState("");
+  const backendUrl = "http://your-backend-ip:your-port";
+  const registrationRoute = "/createNewAccount";
+  const apiUrl = `${backendUrl}${registrationRoute}`;
 
   const handleRegistration = async () => {
     try {
@@ -20,19 +24,18 @@ const RegisterScreen = ({navigation}) => {
           accName: username,
           accEmail: email,
           accPassword: password,
-        }),
-      });
+        }
+      );
 
-      if (response.ok) {
+      if (response.status === 201) {
         // Registration successful, navigate to another screen
-        navigation.navigate('Login');
+        navigation.navigate("Login");
       } else {
         // Handle registration error
-        const errorData = await response.json();
-        console.error(errorData.message);
+        console.error(response.data.message);
       }
     } catch (error) {
-      console.error('Error registering:', error);
+      console.error("Error registering:", error);
     }
   };
 
