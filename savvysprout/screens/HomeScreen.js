@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, Dimensions, Image, Animated } from 'react-native';
+import styles from '../styles/components/HomeStyle';
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
@@ -60,7 +61,7 @@ function SwipePage() {
   
   function ChatPage() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.container}>
         <Text>Chat!</Text>
       </View>
     );
@@ -68,7 +69,7 @@ function SwipePage() {
 
   function CommunitiesPage() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.container}>
         <Text>Communities!</Text>
       </View>
     );
@@ -76,7 +77,7 @@ function SwipePage() {
 
   function UserPage() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.container}>
         <Text>User!</Text>
       </View>
     );
