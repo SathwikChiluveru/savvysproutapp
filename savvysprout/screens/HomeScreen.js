@@ -1,6 +1,6 @@
 import styles from '../styles/components/HomeStyle';
 
-
+import { ImageBackground } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ChatPage } from './ChatPage';
 import { CommunityPage } from './CommunityPage';
@@ -37,16 +37,16 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
     onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
     onPanResponderMove: (evt, gestureState) => {
       xPosition.setValue(gestureState.dx);
-      if (gestureState.dx > SCREEN_WIDTH - 150) {
+      if (gestureState.dx > SCREEN_WIDTH - 250) {
         swipeDirection = 'Like';
-      } else if (gestureState.dx < -SCREEN_WIDTH + 150) {
+      } else if (gestureState.dx < -SCREEN_WIDTH + 250) {
         swipeDirection = 'Dislike';
       }
     },
     onPanResponderRelease: (evt, gestureState) => {
       if (
-        gestureState.dx < SCREEN_WIDTH - 150 &&
-        gestureState.dx > -SCREEN_WIDTH + 150
+        gestureState.dx < SCREEN_WIDTH - 250 &&
+        gestureState.dx > -SCREEN_WIDTH + 250
       ) {
         swipedDirection('--');
         Animated.spring(xPosition, {
@@ -55,7 +55,7 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
           bounciness: 10,
           useNativeDriver: false,
         }).start();
-      } else if (gestureState.dx > SCREEN_WIDTH - 150) {
+      } else if (gestureState.dx > SCREEN_WIDTH - 250) {
         Animated.parallel([
           Animated.timing(xPosition, {
             toValue: SCREEN_WIDTH,
@@ -71,7 +71,7 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
           swipedDirection(swipeDirection);
           removeCard();
         });
-      } else if (gestureState.dx < -SCREEN_WIDTH + 150) {
+      } else if (gestureState.dx < -SCREEN_WIDTH + 250) {
         Animated.parallel([
           Animated.timing(xPosition, {
             toValue: -SCREEN_WIDTH,
@@ -93,17 +93,32 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
 
   return (
     <Animated.View
-      {...panResponder.panHandlers}
-      style={[
-        styles.cardStyle,
-        {
-          backgroundColor: item.backgroundColor,
-          opacity: cardOpacity,
-          transform: [{ translateX: xPosition }, { rotate: rotateCard }],
-        },
-      ]}>
-      <Text style={styles.cardTitleStyle}> {item.cardTitle} </Text>
-    </Animated.View>
+    {...panResponder.panHandlers}
+    style={[
+      styles.cardStyle,
+      {
+        transform: [{ translateX: xPosition }, { rotate: rotateCard }],
+      },
+    ]}
+  >
+      <ImageBackground
+        source={item.imageUrl}
+        style={{
+          width: '100%',
+          height: '100%',
+          justifyContent: 'center', // Center the title vertically
+          alignItems: 'center', // Center the title horizontally
+        }}
+      >
+        <Text style={styles.cardTitleStyle}> {item.cardTitle} </Text>
+        <View style={styles.cardInfoContainer}>
+          <Text style={styles.cardInfoText}>{item.name},{item.age}</Text>
+          <Text style={styles.cardInfoText}>{item.location}</Text>
+          <Text style={styles.cardInfoText}>Skills: {item.skills}</Text>
+        </View>
+      </ImageBackground>
+  </Animated.View>
+
   );
 };
 
@@ -176,26 +191,54 @@ const DEMO_CONTENT = [
     id: '1',
     cardTitle: 'Card 1',
     backgroundColor: '#FFC107',
+    imageUrl: require('../assets/timmy.jpg'),
+    name: 'Timothy Chalamet',
+    age: 30,
+    location: 'Beauty World',
+    skills: 'Acting, Flying Airplanes',
   },
   {
     id: '2',
     cardTitle: 'Card 2',
     backgroundColor: '#ED2525',
+    imageUrl: require('../assets/ryan.jpg'),
+    name: 'Ryan Reynolds',
+    age: 35,
+    location: 'Punggol',
+    skills: 'Football, JavaScript',
   },
   {
     id: '3',
     cardTitle: 'Card 3',
     backgroundColor: '#E7088E',
+    imageUrl: require('../assets/scarjo.jpg'),
+    name: 'Scarlet Johansson',
+    age: 25,
+    location: 'Changi',
+    skills: 'Java, Italian Cuisine',
+
   },
   {
     id: '4',
     cardTitle: 'Card 4',
     backgroundColor: '#00BCD4',
+    imageUrl: require('../assets/Jisoo.jpg'),
+    name: 'Jisoo',
+    age: 25,
+    location: 'Serangoon',
+    skills: 'Singing, Kpop Dance',
+
   },
   {
     id: '5',
     cardTitle: 'Card 5',
     backgroundColor: '#FFFB14',
+    imageUrl: require('../assets/eric.jpg'),
+    name: 'Eric Cartman',
+    age: 10,
+    location: 'Jurong',
+    skills: 'Woodwork',
+
   },
 ].reverse();
 
