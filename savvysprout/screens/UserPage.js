@@ -17,21 +17,24 @@ import photos  from "../assets/1.jpg";
 const PhotosRoutes = () => (
   <View style={{ flex: 1 }}>
     <FlatList
-      data={photos}
-      numColumns={3}
+      data={["Origami", "Indonesian Cuisine", "Korean Cuisine", "Carpentry", "Full Stack Development"]} // Manually provide the titles
+      numColumns={2}
       renderItem={({ item, index }) => (
         <View
           style={{
             flex: 1,
-            aspectRatio: 1,
-            margin: 3,
+            aspectRatio: 2,
+            margin: 10, // Adjust the margin here
+            justifyContent: 'center', // Center the content vertically
+            alignItems: 'center', // Center the content horizontally
+            borderWidth: 1, // Add a border to see the layout
+            borderColor: 'black', // Border color
+            borderRadius: 25, // Add some borderRadius
           }}
         >
-          <Image
-            key={index}
-            source={item}
-            style={{ width: "200%", height: "200%", borderRadius: 2 }}
-          />
+          {/* Use item to display the title */}
+          <Text>{item}</Text>
+          {/* Add other styles or components as needed */}
         </View>
       )}
     />
@@ -41,26 +44,30 @@ const PhotosRoutes = () => (
 const LikesRoutes = () => (
   <View style={{ flex: 1 }}>
     <FlatList
-      data={photos}
-      numColumns={3}
+      data={["CentralSG Coders", "Woodwork Masters", "Invest4U", "Uncle Roger Fanclub"]} // Manually provide the titles
+      numColumns={2}
       renderItem={({ item, index }) => (
         <View
           style={{
             flex: 1,
-            aspectRatio: 1,
-            margin: 3,
+            aspectRatio: 2,
+            margin: 10, // Adjust the margin here
+            justifyContent: 'center', // Center the content vertically
+            alignItems: 'center', // Center the content horizontally
+            borderWidth: 1, // Add a border to see the layout
+            borderColor: 'black', // Border color
+            borderRadius: 25, // Add some borderRadius
           }}
         >
-          <Image
-            key={index}
-            source={item}
-            style={{ width: "200%", height: "200%", borderRadius: 2 }}
-          />
+          {/* Use item to display the title */}
+          <Text>{item}</Text>
+          {/* Add other styles or components as needed */}
         </View>
       )}
     />
   </View>
 );
+
 
 const renderScene = SceneMap({
   first: PhotosRoutes,
