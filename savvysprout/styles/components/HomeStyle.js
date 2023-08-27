@@ -24,7 +24,11 @@ const styles = StyleSheet.create({
     },
     cardTitleStyle: {
       color: '#fff',
-      fontSize: 24,
+      fontSize: 22,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Set the background color
+      paddingLeft: 5,
+      paddingBottom: 3
+
     },
     swipeText: {
       fontSize: 18,

@@ -106,15 +106,14 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
         style={{
           width: '100%',
           height: '100%',
-          justifyContent: 'center', // Center the title vertically
-          alignItems: 'center', // Center the title horizontally
+          justifyContent: 'flex-end', // Center the title vertically
+          // alignItems: 'center', // Center the title horizontally
         }}
       >
-        <Text style={styles.cardTitleStyle}> {item.cardTitle} </Text>
         <View style={styles.cardInfoContainer}>
-          <Text style={styles.cardInfoText}>{item.name},{item.age}</Text>
-          <Text style={styles.cardInfoText}>{item.location}</Text>
-          <Text style={styles.cardInfoText}>Skills: {item.skills}</Text>
+          <Text style={styles.cardTitleStyle}>{item.name},{item.age}</Text>
+          <Text style={styles.cardTitleStyle}>{item.location}</Text>
+          <Text style={styles.cardTitleStyle}>Skills: {item.skills}</Text>
         </View>
       </ImageBackground>
   </Animated.View>

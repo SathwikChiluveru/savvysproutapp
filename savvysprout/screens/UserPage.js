@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome5 } from '@expo/vector-icons';
 import { SceneMap, TabBar, TabView } from "react-native-tab-view";
 import photos  from "../assets/1.jpg";
 
@@ -132,7 +133,6 @@ function UserPage() {
             marginTop: -90,
           }}
         />
-
         <Text
           style={{
             color: "#ffcc15",
@@ -242,7 +242,7 @@ function UserPage() {
               height: 36,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#ffcc15",
+              backgroundColor: "#FF0000",
               borderRadius: 10,
               marginHorizontal: 10 * 2,
             }}
@@ -252,7 +252,7 @@ function UserPage() {
                 color: "#FFFFFF",
               }}
             >
-              Add Friend
+              Logout
             </Text>
           </TouchableOpacity>
         </View>
