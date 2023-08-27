@@ -6,6 +6,7 @@ import { ChatPage } from './ChatPage';
 import { CommunityPage } from './CommunityPage';
 import { UserPage } from './UserPage';
 import React, { useState } from 'react';
+import { Entypo } from '@expo/vector-icons';
 
 // import all the components we are going to use
 import {
@@ -156,10 +157,11 @@ function SwipePage() {
             item={item}
             removeCard={() => removeCard(item.id)}
             swipedDirection={lastSwipedDirection}
+            style={styles.cardTitleStyle}
           />
         ))}
         {noMoreCard ? (
-          <Text style={{ fontSize: 22, color: '#000' }}>No Cards Found.</Text>
+          <Text style={styles.cardTitleStyle}>No Cards Found.</Text>
         ) : null}
       </View>
     </SafeAreaView>
@@ -169,14 +171,43 @@ function SwipePage() {
 
   function MyTabs() {
     return (
-      <Tab.Navigator>
-        <Tab.Screen name="Swipe" component={SwipePage} />
-        <Tab.Screen name="Chat" component={ChatPage} />
-        <Tab.Screen name="Communities" component={CommunityPage} />
-        <Tab.Screen name="User" component={UserPage} />
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: { backgroundColor: '#ffcc15' },
+        }}
+      >
+        <Tab.Screen
+          name="Swipe"
+          component={SwipePage}
+          options={{
+            headerStyle: { backgroundColor: '#ffcc15' }, // Set the header background color for Swipe tab
+          }}
+        />
+        <Tab.Screen
+          name="Chat"
+          component={ChatPage}
+          options={{
+            headerStyle: { backgroundColor: '#ffcc15' }, // Set the header background color for Chat tab
+          }}
+        />
+        <Tab.Screen
+          name="Communities"
+          component={CommunityPage}
+          options={{
+            headerStyle: { backgroundColor: '#ffcc15' }, // Set the header background color for Communities tab
+          }}
+        />
+        <Tab.Screen
+          name="User"
+          component={UserPage}
+          options={{
+            headerStyle: { backgroundColor: '#ffcc15' }, // Set the header background color for User tab
+          }}
+        />
       </Tab.Navigator>
     );
   }
+  
 
 function HomeScreen() {
   return (

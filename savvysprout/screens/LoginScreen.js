@@ -31,11 +31,11 @@ const LoginScreen = ({navigation}) => {
       <TouchableOpacity>
         <Text style={styles.forgot_button}>Forgot Password?</Text> 
       </TouchableOpacity> 
-      <TouchableOpacity style={styles.signupBtn} onPress={() => navigation.navigate('Register')}>
-        <Text style={styles.signupText}>Sign Up</Text>
-      </TouchableOpacity>
       <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.loginText}>LOGIN</Text> 
+        <Text style={styles.btnText}>Login</Text> 
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.signupBtn} onPress={() => navigation.navigate('Register')}>
+        <Text style={styles.btnText}>Sign Up</Text>
       </TouchableOpacity>
     </View> 
   );

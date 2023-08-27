@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
       fontSize: 22,
       backgroundColor: 'rgba(0, 0, 0, 0.5)', // Set the background color
       paddingLeft: 5,
-      paddingBottom: 3
+      paddingBottom: 3,
+      paddingTop:5
 
     },
     swipeText: {

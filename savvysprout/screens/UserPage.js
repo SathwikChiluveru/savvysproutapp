@@ -75,7 +75,7 @@ const renderScene = SceneMap({
   second: LikesRoutes,
 });
 
-function UserPage() {
+function UserPage({navigation}) {
   const layout = useWindowDimensions();
   const [index, setIndex] = useState(0);
 
@@ -139,7 +139,7 @@ function UserPage() {
             marginVertical: 8,
           }}
         >
-          Marco
+         <FontAwesome5 name="crown" size={16} color="#ffcc15" /> Marco
         </Text>
         <Text
           style={{
@@ -236,7 +236,7 @@ function UserPage() {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}
             style={{
               width: 124,
               height: 36,
@@ -245,6 +245,7 @@ function UserPage() {
               backgroundColor: "#FF0000",
               borderRadius: 10,
               marginHorizontal: 10 * 2,
+              
             }}
           >
             <Text

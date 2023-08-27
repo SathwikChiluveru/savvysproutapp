@@ -35,23 +35,29 @@ const styles = StyleSheet.create({
       marginBottom: 30,
     },
     signupBtn: {
-      width: "80%",
+      width: "40%",
       borderRadius: 25,
       height: 50,
       alignItems: "center",
       justifyContent: "center",
       marginTop: 10,
-      backgroundColor: "#FF1493",
+      backgroundColor: "#ffcc15",
     },
     loginBtn: {
-      width: "80%",
+      width: "40%",
       borderRadius: 25,
       height: 50,
       alignItems: "center",
       justifyContent: "center",
       marginTop: 20,
-      backgroundColor: "#FF1493",
+      backgroundColor: "#ffcc15",
+      
     },
+
+    btnText:{
+      fontSize: 20,
+      
+    }
   });
 
 export default styles
