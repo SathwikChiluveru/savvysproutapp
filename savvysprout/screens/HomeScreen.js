@@ -38,9 +38,9 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
     onPanResponderMove: (evt, gestureState) => {
       xPosition.setValue(gestureState.dx);
       if (gestureState.dx > SCREEN_WIDTH - 150) {
-        swipeDirection = 'Right';
+        swipeDirection = 'Like';
       } else if (gestureState.dx < -SCREEN_WIDTH + 150) {
-        swipeDirection = 'Left';
+        swipeDirection = 'Dislike';
       }
     },
     onPanResponderRelease: (evt, gestureState) => {
@@ -132,11 +132,7 @@ function SwipePage() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Text style={styles.titleText}>
-        React Native Swipeable Card View UI like Tinder
-      </Text>
       <Text style={styles.swipeText}>
-        Last Card Swipe Direction was{'\n'}
         {swipeDirection}
       </Text>
       <View style={styles.container}>
