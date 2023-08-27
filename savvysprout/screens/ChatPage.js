@@ -13,14 +13,14 @@ function ChatPage(){
         name: "Jihoon",
         messages : [
           {
-            id: "4a",
+            id: "1a",
             text: "Guys wake up",
             time: "12:50",
             user: "Friend"
           },
 
           {
-            id: "4b",
+            id: "1b",
             text: "Hey what are you doing rn",
             time: "1:00",
             user: "Marco"
