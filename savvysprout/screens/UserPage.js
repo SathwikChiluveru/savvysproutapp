@@ -179,12 +179,21 @@ function UserPage() {
               marginHorizontal: 10,
             }}
           >
+          </View>
+
+          <View
+            style={{
+              flexDirection: "column",
+              alignItems: "center",
+              marginHorizontal: 10,
+            }}
+          >
             <Text
               style={{
                 color: "#ffcc15",
               }}
             >
-              122
+              1k
             </Text>
             <Text
               style={{
@@ -202,43 +211,7 @@ function UserPage() {
               marginHorizontal: 10,
             }}
           >
-            <Text
-              style={{
-                color: "#ffcc15",
-              }}
-            >
-              67
-            </Text>
-            <Text
-              style={{
-                color: "#ffcc15",
-              }}
-            >
-              Followings
-            </Text>
-          </View>
 
-          <View
-            style={{
-              flexDirection: "column",
-              alignItems: "center",
-              marginHorizontal: 10,
-            }}
-          >
-            <Text
-              style={{
-                color: "#ffcc15",
-              }}
-            >
-              77K
-            </Text>
-            <Text
-              style={{
-                color: "#ffcc15",
-              }}
-            >
-              Likes
-            </Text>
           </View>
         </View>
 
