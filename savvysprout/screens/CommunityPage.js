@@ -22,8 +22,7 @@ function CommunityPage(){
 
           {
             id: "1b",
-            text: "jojo: Anyone wanna join me for a Hackathon next week?",
-            time: "3:00",
+            text: "jojo: Anyone wanna join me for a Hackathon?",
             user: "Marco"
           },
 
@@ -32,19 +31,17 @@ function CommunityPage(){
      },
      {
       id: "2",
-      name: "Wordwork Masters",
+      name: "Woodwork Masters",
       messages : [
         {
           id: "2a",
           text: "Guys wake up",
-          time: "12:50",
           user: "Friend"
         },
 
         {
           id: "2b",
           text: "jj: Anyone know where to buy the above stuff hahah",
-          time: "1:00",
           user: "Marco"
         },
 
@@ -66,7 +63,6 @@ function CommunityPage(){
       {
         id: "3b",
         text: "simpson: is it a good time to invest in chinese markets rn?",
-        time: "11:00",
         user: "Marco"
       },
 
@@ -87,8 +83,7 @@ function CommunityPage(){
 
     {
       id: "3b",
-      text: "nephewjack: any of yall know where to buy veg galangal chilli sauce?",
-      time: "10:30",
+      text: "nephewjack: where to buy chilli sauce?",
       user: "Marco"
     },
 

@@ -54,19 +54,19 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
           toValue: 0,
           speed: 5,
           bounciness: 10,
-          useNativeDriver: false,
+          useNativeDriver: true,
         }).start();
       } else if (gestureState.dx > SCREEN_WIDTH - 250) {
         Animated.parallel([
           Animated.timing(xPosition, {
             toValue: SCREEN_WIDTH,
             duration: 200,
-            useNativeDriver: false,
+            useNativeDriver: true,
           }),
           Animated.timing(cardOpacity, {
             toValue: 0,
             duration: 200,
-            useNativeDriver: false,
+            useNativeDriver: true,
           }),
         ]).start(() => {
           swipedDirection(swipeDirection);
@@ -76,13 +76,13 @@ const SwipeableCard = ({ item, removeCard, swipedDirection }) => {
         Animated.parallel([
           Animated.timing(xPosition, {
             toValue: -SCREEN_WIDTH,
-            duration: 200,
-            useNativeDriver: false,
+            duration: 100,
+            useNativeDriver: true,
           }),
           Animated.timing(cardOpacity, {
             toValue: 0,
-            duration: 200,
-            useNativeDriver: false,
+            duration: 100,
+            useNativeDriver: true,
           }),
         ]).start(() => {
           swipedDirection(swipeDirection);
@@ -147,9 +147,9 @@ function SwipePage() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Text style={styles.swipeText}>
+      {/* <Text style={styles.swipeText}>
         {swipeDirection}
-      </Text>
+      </Text> */}
       <View style={styles.container}>
         {sampleCardArray.map((item, key) => (
           <SwipeableCard

@@ -25,7 +25,7 @@ const PhotosRoutes = () => (
           style={{
             flex: 1,
             aspectRatio: 2,
-            margin: 10, // Adjust the margin here
+            margin: 16, // Adjust the margin here
             justifyContent: 'center', // Center the content vertically
             alignItems: 'center', // Center the content horizontally
             borderWidth: 1, // Add a border to see the layout

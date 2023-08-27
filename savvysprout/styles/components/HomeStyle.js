@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
       paddingVertical: 20,
     },
     cardStyle: {
-      width: '85%',
-      height: '95%',
+      width: '95%',
+      height: '97%',
       justifyContent: 'center',
       alignItems: 'center',
       position: 'absolute',
-      borderRadius: 7,
+      borderRadius: 9,
     },
     cardTitleStyle: {
       color: '#fff',

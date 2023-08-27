@@ -77,7 +77,6 @@ const RegisterScreen = ({navigation}) => {
           style={styles.TextInput}
           placeholder="Email"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
           onChangeText={(email) => setEmail(email)}
         /> 
       </View> 
