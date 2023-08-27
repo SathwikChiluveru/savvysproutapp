@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {Text,View,Image,TextInput,Button,TouchableOpacity} from "react-native";
 import styles from '../styles/components/RegisterStyle';
-import axios from "axios";
 
 const RegisterScreen = ({navigation}) => {
   const [email, setEmail] = useState("");
